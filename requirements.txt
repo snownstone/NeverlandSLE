@@ -1,0 +1,11 @@
+bs4==0.0.1
+click==7.1.2
+ffmpeg==1.4
+librosa==0.8.0
+matplotlib==3.3.3
+pycryptodome==3.9.9
+pydub==0.24.1
+requests==2.25.1
+seaborn==0.11.1
+selenium==3.141.0
+wordcloud==1.8.1
