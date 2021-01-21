@@ -1,0 +1,60 @@
+1611162733317	geckodriver	INFO	Listening on 127.0.0.1:39433
+1611162733326	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilem23tQU"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1611162740454	Marionette	INFO	Listening on port 39455
+1611162740611	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 142: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 142: unreachable code after return statement
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+1611162760461	Marionette	INFO	Stopped listening on port 39455
+1611164257667	geckodriver	INFO	Listening on 127.0.0.1:52937
+1611164257673	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6L0k9B"
+
+(firefox:140083): Gtk-WARNING **: 01:37:37.718: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:140363): Gtk-WARNING **: 01:37:40.259: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:140384): Gtk-WARNING **: 01:37:40.565: Locale not supported by C library.
+	Using the fallback 'C' locale.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:140473): Gtk-WARNING **: 01:37:43.302: Locale not supported by C library.
+	Using the fallback 'C' locale.
+1611164263480	Marionette	INFO	Listening on port 42713
+1611164263539	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 142: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 142: unreachable code after return statement
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
+1611164354260	Marionette	INFO	Stopped listening on port 42713
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1611164363799	geckodriver	INFO	Listening on 127.0.0.1:44281
+1611164363804	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6AmOEX"
+
+(firefox:140642): Gtk-WARNING **: 01:39:23.852: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:140915): Gtk-WARNING **: 01:39:26.358: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:140936): Gtk-WARNING **: 01:39:26.674: Locale not supported by C library.
+	Using the fallback 'C' locale.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:141022): Gtk-WARNING **: 01:39:29.394: Locale not supported by C library.
+	Using the fallback 'C' locale.
+1611164369568	Marionette	INFO	Listening on port 41225
+1611164369666	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 142: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 96: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/core_218ed265fbaa5bb4f64fdbcaaefef8ba.js?218ed265fbaa5bb4f64fdbcaaefef8ba, line 142: unreachable code after return statement
+JavaScript warning: https://s3.music.126.net/web/s/pt_profile_ranking_2babddb1fbf54b18c9c5a1e86eff5962.js?2babddb1fbf54b18c9c5a1e86eff5962, line 4: unreachable code after return statement
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'MarionetteEvents'
