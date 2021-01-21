@@ -20,6 +20,7 @@
 
 
 ### **Demo 1: 我的 ❤️ 节奏**
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/snownstone/tryagain/HEAD)
 
 已完成，具体见 [mybpm100.ipynb](./mybpm100.ipynb)，也支持在 binder 云服务器上[直接运行](https://mybinder.org/v2/gh/snownstone/tryagain/HEAD)。
 
