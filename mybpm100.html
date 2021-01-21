@@ -14301,22 +14301,30 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[92]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">导入需要的 Python 库</span>
+
+
+<span class="sd">关于 selenium driver 安装：</span>
+<span class="sd">selenium 直接 pip install 就好，不在话下，关键是它还要用到 driver，而且不同浏览器对应不同 driver，这里使用的是火狐 Firefox 对应的 geckodriver，</span>
+<span class="sd">下载页在这里：https://github.com/mozilla/geckodriver/releases；如果使用谷歌 Chrome 浏览器，chromedriver下载地址是这里：https://sites.google.com/a/chromium.org/chromedriver/downloads</span>
+<span class="sd">选择一种 driver 下载到本地后，还要把它加入到环境变量 PATH 中，就此完事。</span>
+
+
+<span class="sd">关于 librosa 安装：</span>
+<span class="sd">如果使用 conda，直接 conda install librosa 一步完事；</span>
+<span class="sd">如果使用 pip，win或os用户两步完事：pip install soundfile, pip install librosa</span>
+<span class="sd">如果使用 pip，linux 用户三步完事...sudo apt install libsndfile1, pip install soundfile, pip install librosa</span>
+
 <span class="sd">&quot;&quot;&quot;</span> 
 <span class="c1"># hashlib、Crypto 包与加密相关，click 与进度条相关，re 与正则表达式相关，base64 编码解码相关</span>
 <span class="c1"># binascii 二进制与ASCII之间的转换</span>
 <span class="c1"># requests, selenium, bs4 爬虫用</span>
 <span class="c1"># pydub 用来切割音乐，librosa 用来分析音乐节拍</span>
 <span class="c1"># matplotlib，seaborn，PIL，wordcloud 用来作图或处理图片</span>
-
-<span class="c1"># librosa 安装：</span>
-<span class="c1"># 如果使用 conda，直接 conda install librosa 一步完事；</span>
-<span class="c1"># 如果使用 pip，win或os用户两步完事：pip install soundfile, pip install librosa</span>
-<span class="c1"># 如果使用 pip，linux 用户三步完事...sudo apt install libsndfile1, pip install soundfile, pip install librosa</span>
 
 
 <span class="kn">import</span> <span class="nn">time</span>
@@ -14336,16 +14344,21 @@ a.anchor-link {
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span>
 <span class="kn">from</span> <span class="nn">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>   <span class="c1"># PyCryptodome 包</span>
 <span class="kn">from</span> <span class="nn">http</span> <span class="kn">import</span> <span class="n">cookiejar</span>
 <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 <span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span> 
+<span class="kn">from</span> <span class="nn">selenium.webdriver</span> <span class="kn">import</span> <span class="n">FirefoxOptions</span>  <span class="c1"># 这行导入针对无头的（headless）binder 服务器，selenium 使用会略有不同</span>
 <span class="kn">from</span> <span class="nn">pydub</span> <span class="kn">import</span> <span class="n">AudioSegment</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
-                                
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span> <span class="c1">#使用 seaborn 默认主题</span>
+  
+    
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">matplot默认字体不支持中文，会乱码，所以需要明确指定支持中文的字体；可以先查看它内置了哪些字体，选出中文的就可以了</span>
 <span class="sd">a = sorted([f.name for f in matplotlib.font_manager.fontManager.ttflist])</span>
@@ -14353,7 +14366,37 @@ a.anchor-link {
 <span class="sd">    print(i)</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
+
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s2">&quot;font&quot;</span><span class="p">,</span><span class="n">family</span><span class="o">=</span><span class="s1">&#39;Source Han Serif CN&#39;</span><span class="p">)</span>       
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="alert alert-block alert-danger">
+<b>说明：</b> 下面一栏代码是受 binder 服务器配置所限而写，为 binder 服务器下载安装 selenium 运行需要的 driver，本地使用此 notebook 时可以直接跳过这部分。下面代码中最后一步将 geckodriver 添加到环境变量 PATH 中，代码中写的路径是对应 binder 服务器的，请忽略。
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">为 binder 远程无头服务器下载安装 geckodriver </span>
+
+<span class="sd">使用subprocess 在 python 中运行 bash 命令</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;wget https://github.com/mozilla/geckodriver/releases/download/v0.29.0/geckodriver-v0.29.0-linux64.tar.gz&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s1">&#39;tar -xvzf geckodriver-v0.29.0-linux64.tar.gz&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;chmod +x geckodriver&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="s2">&quot;mv geckodriver &quot;</span> <span class="o">+</span> <span class="s2">&quot;/srv/conda/envs/notebook/bin&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
 </pre></div>
 
      </div>
@@ -14525,12 +14568,20 @@ a.anchor-link {
                             <span class="n">song_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
                             <span class="n">progressbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
                             
-    <span class="k">def</span> <span class="nf">get_rec</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_rec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">head</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        打开个人用户页面，获取听歌排行相关信息</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">unknown</span> <span class="o">=</span> <span class="s1">&#39;未知&#39;</span>  <span class="c1">#打印报错用</span>
-        <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>    <span class="c1">#不同的浏览器需要下载不同的driver，driver所在路径要加入PATH中      </span>
+        
+        <span class="c1"># 有头还是无头，webdriver.Firefox() 的使用略有不同，基本都是有头的，无头主要针对 binder 远程服务器</span>
+        <span class="k">if</span> <span class="n">head</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>                
+            <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>    <span class="c1">#不同的浏览器需要下载不同的driver，driver所在路径要加入PATH中</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">opts</span> <span class="o">=</span> <span class="n">FirefoxOptions</span><span class="p">()</span>
+            <span class="n">opts</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--headless&quot;</span><span class="p">)</span>
+            <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">(</span><span class="n">firefox_options</span><span class="o">=</span><span class="n">opts</span><span class="p">)</span>      
+        
         <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url_rec</span><span class="p">)</span>
         <span class="n">driver</span><span class="o">.</span><span class="n">switch_to_frame</span><span class="p">(</span><span class="s1">&#39;g_iframe&#39;</span><span class="p">)</span>
         <span class="n">driver</span><span class="o">.</span><span class="n">implicitly_wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -14637,7 +14688,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 运行类中的 get_rec() 函数，目的是根据用户id，爬取全部时间听歌排行的歌曲信息，包括歌曲名、累计次数排行、歌手名、歌曲id，结束后会生成一个mysongs100.txt，利用这个文档，后面生成歌手词云图和歌曲词云图</span>
-<span class="n">mysongs100</span><span class="o">.</span><span class="n">get_rec</span><span class="p">()</span>           
+<span class="n">mysongs100</span><span class="o">.</span><span class="n">get_rec</span><span class="p">(</span><span class="n">head</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>           
 </pre></div>
 
      </div>
