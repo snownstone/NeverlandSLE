@@ -1,7 +1,14 @@
 # **NeverlandSLE**
 
-![Scratch 实时绘制音乐频谱](/img/livespectrum.png)
+## **跟上那节奏！（Let's track the beat!）**
 
+
+![Scratch 实时绘制音乐频谱](img/livespectrum.png)
+
+
+**使用 Python 获取音频信号并做 FFT 分析，使用 [CodeLab Adapter Linda](https://adapter.codelab.club/user_guide/Linda/) 发送数据，使用 Scratch 实时画图**
+
+**Demo 视频[在此](video/livespectrum.mp4)，Scratch 代码[在此](https://create.codelab.club/projects/9478/)，python 代码[在此](AA_realtime_audiofft.ipynb)**
 
 
 <!--
