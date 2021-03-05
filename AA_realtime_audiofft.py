@@ -51,8 +51,17 @@ while True:
     X2 = []
     for i in np.arange(12):
         XX = np.mean(X[start_index[i]:end_index[i]])
-        XXlog = np.log10(XX)
-        X2.append(XXlog)
+        # XX 可能为 0，则下面无法求 log10，所以为 0 时，令其等于一个非常小的值
+        if XX == 0:
+            XX = 1e-300
+        # 下面是将振幅转为分贝，就是以10为底取对数，因为相比线性关系
+        # 对数关系更符合人耳对声音响度的辨别机制 
+        # 取绝对值是因为分贝尺度中，符号没影响
+        
+        XXdB = 20*np.log10(XX)
+        XXout = np.abs(XXdB)
+        X2.append(XXout)
+        #X2.append(XX)
         i=i+1
     
     outlist = ['X2_12',X2]
