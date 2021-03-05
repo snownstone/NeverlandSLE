@@ -2,7 +2,7 @@
 
 ## **跟上那节奏！（Let's track the beat!）**
 
-
+<!--
 ![Scratch 实时绘制音乐频谱](img/livespectrum.png)
 
 
@@ -11,7 +11,7 @@
 **Demo 视频[在此](video/livespectrum.mp4)，Scratch 代码[在此](https://create.codelab.club/projects/9478/)，python 代码[在此](AA_realtime_audiofft.ipynb)**
 
 
-<!--
+
 ## **跟上那节奏！（Let's track the beat! ）**
 
 这个根目录内的所有内容都始自对音乐 **节拍（beat）** 的分析，通过分析 beat，拿到时间序列，将灯光的开关、闪烁或颜色变化映射上去，与音乐形成呼应；或是在 Scratch 中作图，同理映射，做出视听协同的效果。这部分已做出一些 Demo，待整理。

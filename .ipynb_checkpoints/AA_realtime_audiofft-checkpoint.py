@@ -51,7 +51,8 @@ while True:
     X2 = []
     for i in np.arange(12):
         XX = np.mean(X[start_index[i]:end_index[i]])
-        X2.append(XX)
+        XXlog = np.log10(XX)
+        X2.append(XXlog)
         i=i+1
     
     outlist = ['X2_12',X2]
