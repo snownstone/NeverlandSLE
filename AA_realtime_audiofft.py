@@ -14,9 +14,6 @@ node = MyNode()
 node.receive_loop_as_thread()
 
 
-
-time.sleep(0.1)
-
 buff_size = 8820                    
 wanted_num_of_bins = 12              
 fs = 44100
@@ -37,15 +34,13 @@ for i in end_index[:-1]:
 #n=0
 
 while True:
-
     block = stream.read(int(buff_size))
+    a = time.time()
     data = np.fromstring(block, dtype=np.int16)
-
     x = np.array(data)/(2**15)
-    seg_len = len(x)
-
-    
-    X = np.abs(np.fft.fft(x))[0:int(seg_len/2)]
+    x_norm = x*np.hanning(buff_size)
+    X = np.abs(np.fft.fft(x_norm))[0:int(buff_size/2)]/buff_size
+    X[1:] = 2*X[1:]
 
 
     X2 = []
@@ -53,10 +48,14 @@ while True:
         XX = np.mean(X[start_index[i]:end_index[i]])        
         X2.append(XX)
         i=i+1
+
+    b=time.time()
     
     outlist = ['X2_12',X2]
     
     node.linda_out(outlist)
+
+    print(b-a)
 
     # n = n + 1
 
